@@ -243,8 +243,8 @@ if (document.location.host == "music.yandex.ru"){
         this.pause = this.play;
         this.next = player.getElementsByClassName("js-player-next");
         this.previous = player.getElementsByClassName("js-player-prev");
-        this.thumbUp = [[]];
-        this.thumbDown = [[]];
+        this.thumbUp = [];
+        this.thumbDown = [];
         this.favorite = [[]];
         this.songName = player.getElementsByClassName("js-player-title");
         this.artistName = player.getElementsByClassName("js-player-artist");
