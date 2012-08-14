@@ -1,0 +1,173 @@
+#signature, .hidden {
+   display: none;
+}
+
+body, #rows {
+   margin: 0px;
+   padding: 0px;
+}
+
+#content {
+   margin: 0px;
+   padding-right: 24px;
+}
+
+#noTabsMsg {
+   white-space: nowrap;
+   text-align: center;
+   vertical-align: center;
+}
+
+.container {
+   float: left;
+   white-space: nowrap;
+}
+
+.row {
+   list-style: none;
+   padding: 0px;
+   color: black;
+   text-align: right;
+}
+
+.mute {
+   display: block;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   width: 24px;
+   height: 24px;
+   background: url('img/mute.png') no-repeat left top;
+   background-position: 0px 0px;
+   white-space: nowrap;
+}
+
+.mute:hover {
+   background-position: -24px 0px;
+}
+
+.muteDisabled, .muteDisabled:hover {
+   display: none;
+}
+
+body:hover .muteDisabled, .muteDisabled:hover {
+   display: block;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   width: 24px;
+   height: 24px;
+   opacity: 0.2;
+   background: url('img/mute.png') no-repeat top left;
+   white-space: nowrap;
+}
+
+.previous, .play, .next, .thumbUp, .thumbDown {
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.label {
+   float: left;
+   color: black;
+   text-align: center;
+   white-space: nowrap;
+   overflow: hidden;
+   padding-left: 24px;
+   margin: 0px;
+   height: 24px;
+   font-size: 18px;
+   background: url('img/24.png') no-repeat left top;
+   background-size: 24px 24px;
+}
+
+.label:hover {
+   color: #6bf;
+   cursor: pointer;
+}
+
+.icon {
+   float: left;
+   display: block;
+   visibility: visible;
+   width: 24px;
+   height: 24px;
+   vertical-align: top;
+}
+
+.icon:hover {
+   float: left;
+   visibility: visible;
+   width: 24px;
+   height: 24px;
+   opacity: 1.0;
+}
+
+.iconDisabled {
+   float: left;
+   visibility: hidden;
+   opacity: 0.2;
+   width: 24px;
+   height: 24px;
+}
+
+.play {
+   background: url('img/play.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.pause {
+   background: url('img/pause.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.next {
+   background: url('img/next.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.previous {
+   background: url('img/previous.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.thumbUp {
+   background: url('img/thumbUp.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.thumbDown {
+   background: url('img/thumbDown.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.favorite {
+   background: url('img/favorite.png') no-repeat left top;
+   background-position: 0px 0px;
+}
+
+.play:hover, .pause:hover, .next.icon:hover, .previous.icon:hover, .thumbUp.icon:hover, .thumbUp.icon.selected, .thumbUp.icon.selected:hover, .thumbDown.icon:hover, .thumbDown.icon.selected, thumbDown.icon.selected:hover, .favorite:hover {
+   background-position: -24px 0px;
+}
+
+.play:active, .pause:active, .next.icon:active, .previous.icon:active, .thumbUp.icon:active, .thumbDown.icon:active, .favorite.icon:active, .mute:active {
+   opacity: 0.6;
+}
+
+body:hover .iconDisabled {
+   visibility: visible;
+}
+
+body:hover .thumbUp {
+   visibility: visible;
+}
+
+body:hover .thumbDown {
+   visibility: visible;
+}
+
+#signature {
+   width: 100%;
+   text-align: center;
+   font-size: 11px;
+}

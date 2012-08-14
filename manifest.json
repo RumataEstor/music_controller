@@ -1,0 +1,25 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "img/128.png",
+      "default_popup": "popup.html",
+      "default_title": "Music Controller"
+   },
+   "content_scripts": [ {
+      "js": [ "contentScript.js" ],
+      "matches": [ "\u003Call_urls\u003E" ]
+   } ],
+   "description": "Control your browser's music in one place.",
+   "icons": {
+      "128": "img/128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCU9WTOzTpOPpTAflckIchJt4N2ANj86rlu751M2I4uZaEIsq3VawjjGNCFKJhqWNMYw3rV8uxNhGu2uwSGo9nqX8FhHNaJUO2syp9vH77Xt0UkLmTEjCt6wfa5Amlz7bR6KwsIDtWQaAKOfNEEK+9h89qULpjeWDqrKY2px4U+3wIDAQAB",
+   "manifest_version": 2,
+   "name": "Music Controller",
+   "offline_enabled": true,
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1.0.2"
+}
