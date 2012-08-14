@@ -151,18 +151,9 @@ var contentScript = {
       for (var i = 0; i < links.length; i++) {
          var rel = links[i].getAttribute("rel").toLowerCase();
          if (rel == "shortcut icon" || rel == "icon shortcut" || (failed && rel == "icon")) {
-            var href = links[i].getAttribute("href");
-            if (/^\/\//.test(href))
-               href = "http:" + href;
-            if (!/\.(com|net|org)\//.test(href)) {
-               var url = window.location.href;
-               var index = url.indexOf(".com/");
-               if (index == -1) index = url.indexOf(".net/");
-               if (index == -1) index = url.indexOf(".org/");
-               url = url.substring(0, index + 4);
-               href = url + href;
-            }
-            return href;
+            var a = document.createElement('a');
+            a.href = links[i].getAttribute("href");
+            return a.href;
          } else if (i+1 == links.length && !failed) {
             i = -1;
             failed = true;
@@ -243,5 +234,26 @@ var contentScript = {
       return isDisplayed(favorites);
    }
 };
+
+if (document.location.host == "music.yandex.ru"){
+    contentScript.findButtons = function() {
+        var player = document.getElementsByClassName("js-player")[0];
+
+        this.play = player.getElementsByClassName("js-track-play");
+        this.pause = this.play;
+        this.next = player.getElementsByClassName("js-player-next");
+        this.previous = player.getElementsByClassName("js-player-prev");
+        this.thumbUp = [[]];
+        this.thumbDown = [[]];
+        this.favorite = [[]];
+        this.songName = player.getElementsByClassName("js-player-title");
+        this.artistName = player.getElementsByClassName("js-player-artist");
+    };
+    contentScript.isPlaying = function() {
+        var player = document.getElementsByClassName("js-player")[0];
+
+        return player.classList.contains("js-player-playing");
+    };
+}
 
 contentScript.init();
